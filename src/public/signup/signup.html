@@ -1,0 +1,36 @@
+<div class="container">
+    <form name="signUpForm" novalidate>
+        <p>Name: {{ signUpCtrl.loginInfo.first_name }}</p>
+        <p>Last name: {{ signUpCtrl.loginInfo.last_name }}</p>
+        <p>Email: {{ signUpCtrl.loginInfo.email }}</p>
+        <p>Phone: {{ signUpCtrl.loginInfo.phone }}</p>
+        <p>Favorite dish: {{ signUpCtrl.loginInfo.favorite_dish }}</p>
+        <div class="field__wrapper">
+            <label for="first_name">Enter your first name</label>
+            <input type="text" name="first_name" ng-model="signUpCtrl.loginInfo.first_name" required>
+            <span ng-if="signUpForm.first_name.$error.required && signUpForm.first_name.$touched">First name is required</span>
+        </div>
+        <div class="field__wrapper">
+            <label for="last_name">Enter your last name</label>
+            <input type="text" name="last_name" ng-model="signUpCtrl.loginInfo.last_name" required>
+            <span ng-if="signUpForm.last_name.$error.required && signUpForm.last_name.$touched">Last name is required</span>
+        </div>
+        <div class="field__wrapper">
+            <label for="email">Enter your email</label>
+            <input type="email" name="email" ng-model="signUpCtrl.loginInfo.email" required>
+            <span ng-if="signUpForm.email.$error.required && signUpForm.email.$touched">Email is required</span>
+            <span ng-if="signUpForm.email.$invalid">Email must be correctly formatted</span>
+        </div>
+        <div class="field__wrapper">
+            <label for="phone">Enter your phone</label>
+            <input type="text" name="phone" ng-model="signUpCtrl.loginInfo.phone" min-length="11" max-length="11" required>
+            <span ng-if="signUpForm.phone.$error.required && signUpForm.phone.$touched">Phone is required and must respond to the following format: ###-###-###</span>
+        </div>
+        <div class="field__wrapper">
+            <label for="favorite_dish">Enter your favorite dish</label>
+            <input type="text" name="favorite_dish" min-length="2" max-length="3" ng-model="signUpCtrl.loginInfo.favorite_dish" required>
+            <span ng-if="signUpForm.favorite_dish.$error.required && signUpForm.favorite_dish.$touched">Email is required and must be correctly formatted</span>
+        </div>
+        <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.signUp()">Submit my info</button>
+    </form>
+</div>
