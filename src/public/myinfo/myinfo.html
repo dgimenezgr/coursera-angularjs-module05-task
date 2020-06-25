@@ -1,3 +1,14 @@
+
 <div class="container">
-    <p>{{ loginCtrl.myInfo }}</p>
+    <div ng-if="!loginCtrl.isInfoEmpty" class="myinfo__wrapper">
+        <p>First name: {{ loginCtrl.myInfo[0].first_name }}</p>
+        <p>Last name: {{ loginCtrl.myInfo[0].last_name }}</p>
+        <p>Email: {{ loginCtrl.myInfo[0].email }}</p>
+        <p>Phone: {{ loginCtrl.myInfo[0].phone }}</p>
+        <p>Favorite dish: {{ loginCtrl.myInfo[0].favorite_dish }}</p>
+        <img ng-src="{{ loginCtrl.imgPath }}images/{{ loginCtrl.myInfo[0].favorite_dish }}.jpg">
+    </div>
+    <div class="" ng-if="loginCtrl.isInfoEmpty">
+        <a ui-sref="signup"></a><h3>Not Signed Up Yet. Sign up Now!</h3></a>
+    </div>
 </div>

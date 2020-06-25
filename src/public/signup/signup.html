@@ -29,7 +29,8 @@
         <div class="field__wrapper">
             <label for="favorite_dish">Enter your favorite dish</label>
             <input type="text" name="favorite_dish" min-length="2" max-length="3" ng-model="signUpCtrl.loginInfo.favorite_dish" required>
-            <span ng-if="signUpForm.favorite_dish.$error.required && signUpForm.favorite_dish.$touched">Email is required and must be correctly formatted</span>
+            <span ng-if="signUpForm.favorite_dish.$error.required && signUpForm.favorite_dish.$touched">A dish short name is mandatory!.</span>
+            <span ng-if="!signUpCtrl.checkDish(signUpCtrl.loginInfo.favorite_dish)">A valid dish short name must be entered.</span>
         </div>
         <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.signUp()">Submit my info</button>
     </form>

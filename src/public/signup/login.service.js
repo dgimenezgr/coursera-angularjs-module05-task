@@ -25,5 +25,14 @@
             return loginInfo;
         };
 
+        service.isInfoEmpty = function() {
+            for(var key in loginInfo) {
+                if (loginInfo.hasOwnProperty(key)) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
     }
 })();

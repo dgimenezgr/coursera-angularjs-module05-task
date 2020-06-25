@@ -4,14 +4,14 @@
     angular.module('public')
     .controller('LoginController', LoginController);
     
-    LoginController.$inject = ['myInfo','LoginService'];
-    function LoginController(myInfo,LoginService) {
+    LoginController.$inject = ['myInfo','LoginService','ApiPath'];
+    function LoginController(myInfo,LoginService,ApiPath) {
       var loginCtrl = this;
 
       loginCtrl.myInfo = myInfo;
+      loginCtrl.imgPath = ApiPath;
 
-      console.log('Login Controler My Info: ' + myInfo);
-      
+      loginCtrl.isInfoEmpty = LoginService.isInfoEmpty();
 
     }
     
