@@ -19,24 +19,36 @@
         signUpCtrl.menuItemShortnames.push(menuItemShortname);
       }
 
-      console.log(signUpCtrl.menuItemShortnames);
-      
       signUpCtrl.signUp = function() {
 
         if (Object.keys(signUpCtrl.loginInfo).length === 0 && signUpCtrl.loginInfo.constructor === Object) {
           signUpCtrl.loginInfo = {};
         }
 
-        LoginService.setLoginInfo(signUpCtrl.loginInfo);
+        signUpCtrl.isSaved = false;
 
-      }
+         
+        LoginService.getLoginFavoriteDish(signUpCtrl.loginInfo.favorite_dish)
+        .then(function (result) {
+            signUpCtrl.loginInfo.favorite_dish_info = result;
+        })
+        .then(function (result) {
+          LoginService.setLoginInfo(signUpCtrl.loginInfo);
+
+        }).then(function (result) {
+          signUpCtrl.isSaved = true;
+        })
+        .catch(function (error){
+          console.log(error.message);
+        });
+      };
 
       signUpCtrl.checkDish = function(short_name) {
         if (signUpCtrl.menuItemShortnames.includes(short_name)) {
           return true;
         }
         return false;
-      }
+      };
     }
     
     })();

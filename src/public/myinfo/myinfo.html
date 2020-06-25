@@ -5,7 +5,8 @@
         <p>Last name: {{ loginCtrl.myInfo[0].last_name }}</p>
         <p>Email: {{ loginCtrl.myInfo[0].email }}</p>
         <p>Phone: {{ loginCtrl.myInfo[0].phone }}</p>
-        <p>Favorite dish: {{ loginCtrl.myInfo[0].favorite_dish }}</p>
+        <p>Favorite dish: {{ loginCtrl.myInfo[0].favorite_dish }} - {{ loginCtrl.myInfo[0].favorite_dish_info.name }}</p>
+        <p>Description: {{ loginCtrl.myInfo[0].favorite_dish_info.description }}</p>
         <img ng-src="{{ loginCtrl.imgPath }}images/{{ loginCtrl.myInfo[0].favorite_dish }}.jpg">
     </div>
     <div class="" ng-if="loginCtrl.isInfoEmpty">
