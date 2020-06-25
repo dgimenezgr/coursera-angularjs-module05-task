@@ -18,3 +18,149 @@
 .ui-view-placeholder {
     margin-top: 60px;
 }
+
+.flex {
+    display: flex;
+}
+
+.flex--column {
+    flex-direction: column;
+}
+
+.flex--row {
+    flex-direction: row;
+}
+
+.flex--align-center {
+    align-items: center;
+}
+
+.flex--align-start {
+    align-items: flex-start;
+}
+
+.flex--align-end {
+    align-items: flex-end;
+}
+
+.flex--justify-center {
+    justify-content: center;
+}
+
+.flex--justify-start {
+    justify-content: flex-start;
+}
+
+.flex--justify-end {
+    justify-content: flex-end;
+}
+
+.form__title-block {
+    margin-bottom: 32px;
+}
+
+.form__title {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.form__subtitle {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.field__wrapper {
+    width: 100%;
+    min-width: 520px;
+    margin-bottom: 24px;
+}
+
+.field__label, .field__input {
+    width: 100%;
+}
+
+.field__input {
+    color: black;
+}
+
+.field__warning {
+    color: white;
+    background-color: orange;
+    border-radius: 4px;
+    text-align: center;
+    padding: 4px 24px;
+    margin: 8px 0;
+    transition: all 0.3s;
+}
+
+.button__button {
+    color: white;
+    background-color: peru;
+    border-style: none;
+    border-radius: 4px;
+    text-align: center;
+    padding: 4px 24px;
+    margin: 8px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+
+.button__button:hover {
+    transform: scale(1.01);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.form__success {
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+    text-align: center;
+    padding: 4px 24px;
+    margin: 8px 0;
+    transition: all 0.3s;
+}
+
+.form__success p {
+    margin: 0;
+}
+.myinfo__wrapper {
+    width: 100%;
+    min-width: 520px;
+    color: white;
+    background-color: peru;
+    border-style: none;
+    border-radius: 4px;
+    text-align: center;
+    padding: 24px;
+    margin: 24px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.myinfo__content {
+    font-size: 18px;
+    color: white;
+}
+
+.myinfo__image {
+    width: 480px;
+    height: auto;
+    margin-top: 24px;
+}
+
+.notsignedup__link {
+    color: orange;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.notsignedup__link:hover {
+    cursor: pointer;
+    text-decoration: none;
+    transform: scale(1.06);
+    color: orange;
+}
+
+.text-align--center {
+    text-align: center;
+}

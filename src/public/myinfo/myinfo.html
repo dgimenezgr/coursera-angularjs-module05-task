@@ -1,15 +1,15 @@
 
-<div class="container">
+<div class="container flex flex--column flex--align-center flex--justify-center">
     <div ng-if="!loginCtrl.isInfoEmpty" class="myinfo__wrapper">
-        <p>First name: {{ loginCtrl.myInfo[0].first_name }}</p>
-        <p>Last name: {{ loginCtrl.myInfo[0].last_name }}</p>
-        <p>Email: {{ loginCtrl.myInfo[0].email }}</p>
-        <p>Phone: {{ loginCtrl.myInfo[0].phone }}</p>
-        <p>Favorite dish: {{ loginCtrl.myInfo[0].favorite_dish }} - {{ loginCtrl.myInfo[0].favorite_dish_info.name }}</p>
-        <p>Description: {{ loginCtrl.myInfo[0].favorite_dish_info.description }}</p>
-        <img ng-src="{{ loginCtrl.imgPath }}images/{{ loginCtrl.myInfo[0].favorite_dish }}.jpg">
+        <p class="myinfo__content"><strong>First name: </strong>{{ loginCtrl.myInfo[0].first_name }}</p>
+        <p class="myinfo__content"><strong>Last name: </strong>{{ loginCtrl.myInfo[0].last_name }}</p>
+        <p class="myinfo__content"><strong>Email: </strong>{{ loginCtrl.myInfo[0].email }}</p>
+        <p class="myinfo__content"><strong>Phone: </strong>{{ loginCtrl.myInfo[0].phone }}</p>
+        <p class="myinfo__content"><strong>Favorite dish: </strong>{{ loginCtrl.myInfo[0].favorite_dish }} - {{ loginCtrl.myInfo[0].favorite_dish_info.name }}</p>
+        <p class="myinfo__content"><strong>Description: </strong>{{ loginCtrl.myInfo[0].favorite_dish_info.description }}</p>
+        <img class="myinfo__image" ng-src="{{ loginCtrl.imgPath }}images/{{ loginCtrl.myInfo[0].favorite_dish }}.jpg">
     </div>
-    <div class="" ng-if="loginCtrl.isInfoEmpty">
-        <a ui-sref="signup"></a><h3>Not Signed Up Yet. Sign up Now!</h3></a>
+    <div class="notsignedup__block" ng-if="loginCtrl.isInfoEmpty">
+        <h3>Not Signed Up Yet. <a class="notsignedup__link" ui-sref="public.signup">Sign up Now!</a></h3>
     </div>
 </div>
